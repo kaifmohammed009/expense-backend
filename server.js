@@ -5,5 +5,6 @@ const app = express();
 connectDB();
 app.use(cors());
 app.use(express.json());
-app.use("/api/expenses", require("./routes/expenseRoutes"));
+const expenseRoutes = require ("./routes/expenseRoutes");
+app.use("/api/expenses",("./routes/expenseRoutes"));
 app.listen(5000, () => console.log("Server running on port 5000"));
